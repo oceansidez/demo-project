@@ -1,0 +1,30 @@
+@viewport{width:750px;}
+*{-webkit-appearance:none; max-height:999999px; -webkit-tap-highlight-color:rgba(0,0,0,0);}
+html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td {margin:0; padding:0; }
+html,body,input,textarea{font-family:"微软雅黑", Verdana, Arial, Helvetica, sans-serif;}
+/* html,body{height: 100%;background: #fff;} */
+address, caption, cite, code, dfn, em, strong, th, var{font-style:normal; font-weight:normal;}
+ol,ul,li{list-style:none;}
+table{border-collapse:collapse;}
+a{border:0px; padding:0px; margin:0px; text-decoration:none; -webkit-appearance:none; /*解决iphone safari上的圆角问题*/}
+a:focus{outline:0; text-decoration:none;}
+img{border:0px; padding:0px; margin:0px; display:block;}
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{color: #b8b8b8;}
+input,input:focus,textarea,textarea:focus,button,button:focus{outline: none;}
+.float{display: -moz-box;display: -ms-box;display: -o-box;display: -webkit-box;display: box;}
+.flex{-moz-box-flex: 1;-ms-box-flex: 1;-o-box-flex: 1;-webkit-box-flex: 1;box-flex: 1;}
+.none{display:none;}
+.clear{clear:both}
+.wapcon{width:750px; min-height: 100%; margin: 0 auto;}
+
+/* 底部导航 */
+.b_nav{height: 94px;}
+.b_nav ul{position: fixed;left: 0;bottom: 0;width: 100%;border-top: 1px solid #dedede;background: #fff;overflow: hidden;}
+.b_nav ul li{width:33.33%;float: left;height: 94px;}
+.b_nav ul li a{display: block;padding-top: 56px;text-align: center;line-height: 28px;font-size: 20px;color: #999;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;cursor: pointer;}
+.b_nav ul li.b_nav_icon01 a{background: url(../images/b_nav_icon02.png) center 15px no-repeat;}
+.b_nav ul li.b_nav_icon02 a{background: url(../images/b_nav_icon04.png) center 15px no-repeat;}
+.b_nav ul li.b_nav_icon03 a{background: url(../images/b_nav_icon06.png) center 15px no-repeat;}
+.b_nav ul li.b_nav_icon01.cur a{background: url(../images/b_nav_icon01.png) center 15px no-repeat;color: #fc8462;}
+.b_nav ul li.b_nav_icon02.cur a{background: url(../images/b_nav_icon03.png) center 15px no-repeat;color: #fc8462;}
+.b_nav ul li.b_nav_icon03.cur a{background: url(../images/b_nav_icon05.png) center 15px no-repeat;color: #fc8462;}

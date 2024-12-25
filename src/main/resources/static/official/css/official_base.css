@@ -1,0 +1,54 @@
+body, button, input, select, textarea {font: 12px "微软雅黑","Helvetica","sans-serif";}
+body, div, h1, h2, h3, h4, h5, h6, dl, dt, dd, ul, ol, li, th, td, p, blockquote, pre, form, fieldset, legend, input, button, textarea, hr {margin: 0; padding: 0;}
+table,tr,td{ border:0;border-collapse:collapse;border-spacing:0;}
+address,caption,cite,code,dfn,em,strong,th,var{ font-weight:normal;font-style:normal; }
+h1, h2, h3, h4, h5 {font-size: 100%;font-weight: normal;}
+.em{text-indent:2em;}
+ol,ul{ list-style:none; }
+li {list-style: none outside none;}
+fieldset, img, a img{border: 0 none;}
+caption,th{ text-align:left; }
+abbr,acronym{ border:0; }
+textarea {resize: none;}
+button{border: none;}
+a{text-decoration: none;}
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{color: #b8b8b8;}
+input,input:focus,textarea,textarea:focus,button,button:focus{outline: none;}
+.float{display: -moz-box;display: -ms-box;display: -o-box;display: -webkit-box;display: box;}
+.flex{-moz-box-flex: 1;-ms-box-flex: 1;-o-box-flex: 1;-webkit-box-flex: 1;box-flex: 1;}
+.left{float: left;}
+.right{float: right;}
+.none{display:none;}
+.clear{clear:both}
+.clearfix:after{  content: "."; display: block; height: 0; clear: both; visibility: hidden;  }   
+.clearfix {*zoom: 1;}   /* IE6、7 专有 */
+.noselect {
+-webkit-touch-callout: none; /* iOS Safari */
+-webkit-user-select: none; /* Chrome/Safari/Opera */
+-khtml-user-select: none; /* Konqueror */
+-moz-user-select: none; /* Firefox */
+-ms-user-select: none; /* Internet Explorer/Edge */
+user-select: none;
+}
+
+
+/*导航*/
+.headerBox{width: 100%;height: 84px;}
+.header{position: fixed;left: 0;top: 0;width:100%;min-width: 1200px;height: 84px;background: #fff;box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.3);z-index: 10;}
+.headerCon{width: 1200px;margin: 0 auto;}
+.logo img{display: block;width:280px;height: 84px;}
+.nav>ul{font-size: 0;}
+.nav>ul>li{display: inline-block;vertical-align: top;padding:22px 4px;position: relative;}
+.nav>ul>li>a{display: block;line-height:38px;height:38px;padding: 0 16px;border: 1px solid #fff;font-size: 16px;color: #777;cursor: pointer;}
+.nav>ul>li.cur>a,.nav>ul>li:hover>a,.nav>ul>li.report ul.reportUl li.cur a,.nav>ul>li.report ul.reportUl li a:hover{color: #333;background: #fee226;}
+.nav>ul>li.report>a{padding: 0 24px;}
+.nav>ul>li.report:hover>a{border:1px solid #ecce52;background: #fff;}
+.nav>ul>li.report:hover ul.reportUl{display:block}
+.nav>ul>li.report ul.reportUl{display: none;width: 120px;position: absolute;top:74px;left:0px;padding-top: 10px;background:#fff url(../images/bg02.png) center top no-repeat;z-index: 3;}
+.nav>ul>li.report ul.reportUl li{width: 120px;box-sizing: border-box;}
+.nav>ul>li.report ul.reportUl li{padding:7px 18px;}
+.nav>ul>li.report ul.reportUl li a{display: block;text-align: center;line-height: 30px;font-size: 16px;color: #777;}
+
+.footer{width: 100%;min-width: 1200px;height: 293px; background: #333;}
+.footer.fixed{position: fixed; left: 0; bottom: 0;}
+.footer img{display: block;width: 1200px;height: 293px;margin: 0 auto;}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/base.css" />
+	<title></title>
+	<style>
+		.wx_box{width: 305px; height: 500px; background: url(images/bg.jpg) no-repeat; background-size: cover; position: relative; z-index: 1;}
+		.wx_nav{width: 270px; padding-left: 35px; position: absolute; bottom: 0; left: 0; z-index: 2; font-size: 0;}
+		.wx_nav ul{width: 88px; height: 40px; padding: 0 1px; display: inline-block; vertical-align: bottom;}
+		.wx_nav ul li{width: 88px; height: 40px; font-size: 16px; color: #333; text-align: center; line-height: 40px; background: #f7f7f7; cursor: pointer; position: relative;
+			-webkit-touch-callout: none; /* iOS Safari */
+			-webkit-user-select: none; /* Chrome/Safari/Opera */
+			-khtml-user-select: none; /* Konqueror */
+			-moz-user-select: none; /* Firefox */
+			-ms-user-select: none; /* Internet Explorer/Edge */
+			user-select: none;
+		}
+		.wx_nav ul li.two i{display: none; width: 16px; height: 16px; position: absolute; top: 0; right: 0; background: #c54820; font-size: 12px; color: #fff; text-align: center; line-height: 1; font-style: normal; cursor: pointer;}
+		.wx_nav ul li.two:hover i{display: block;}
+		.btns{width: 305px; height: 40px; padding-top: 50px; font-size: 0; text-align: center;}
+		.btns span{width: 120px; height: 38px; margin: 0 12px; display: inline-block; vertical-align: middle; border-radius: 5px; border: 1px solid #ccc; font-size: 20px; color: #fff; text-align: center; line-height: 38px; cursor: pointer;
+			-webkit-touch-callout: none; /* iOS Safari */
+			-webkit-user-select: none; /* Chrome/Safari/Opera */
+			-khtml-user-select: none; /* Konqueror */
+			-moz-user-select: none; /* Firefox */
+			-ms-user-select: none; /* Internet Explorer/Edge */
+			user-select: none;
+		}
+		.btns span:nth-child(1){background: #338ed0;}
+		.btns span:nth-child(2){background: #c54820;}
+	</style>
+</head>
+<body>
+	<div class="wx_box">
+		<div class="wx_nav">
+			<ul>
+				<li class="one">+</li>
+			</ul>
+			<ul>
+				<li class="one">+</li>
+			</ul>
+			<ul>
+				<li class="one">+</li>
+			</ul>
+		</div>
+	</div>
+	<div class="btns"><span class="add">添加</span><span class="del">删除</span></div>
+</body>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script>
+	//选择菜单,默认第一个
+	var $thisul=$('.wx_nav').find('ul').eq(0);
+	$('.wx_nav').on('click','ul li',function(){
+		$thisul=$('.wx_nav').find('ul').eq($(this).parent().index());
+	})
+	//删除li
+	$('.wx_nav').on('click','ul li.two i',function(){
+		var liLen = $(this).parents('ul').find('li').length;
+		$(this).parents('ul').css('height',(liLen-1)*40);
+		$(this).parent().remove();
+	})
+	
+	//添加按钮
+	$('.btns span.add').click(function(){
+		var liLen = $thisul.find('li').length;
+		console.log(liLen)
+		if(liLen<6){
+			$thisul.prepend('<li class="two">新菜单<i>x</i></li>');
+			$thisul.css('height',(liLen+1)*40);
+		}
+	})
+	//删除按钮
+	$('.btns span.del').click(function(){
+		
+	})
+	//li选择
+	$('.wx_nav').on('click','ul li',function(){
+		var ulIdnex=$(this).parents('ul').index();
+		var liIdnex=$(this).index();
+		console.log('当前选中的是第'+ulIdnex+'个ul下面的第'+liIdnex+'个li')
+	})
+	
+	
+</script>
+</html>

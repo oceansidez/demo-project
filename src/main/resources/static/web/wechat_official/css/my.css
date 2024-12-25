@@ -1,0 +1,283 @@
+	html,body{
+		height: 100%;
+	}
+	.wapcon {
+    position: relative;
+	}
+	.kt_btn {
+	    width: 100%;
+	    height: 128px;
+	    padding-top: 30px;
+	}
+	.kt_btn .con {
+	    width: 100%;
+	    height: 128px;
+	    padding: 28px 30px;
+	    box-sizing: border-box;
+	    background: #fff;
+	    position: absolute;
+	    left: 0;
+	    bottom: 0;
+	}
+	.kt_btn .btn {
+	    width: 100%;
+	    height: 72px;
+	    font-size: 28px;
+	    color: #fff;
+	    line-height: 72px;
+	    text-align: center;
+	    background-image: url(../images/login_btn_bg.jpg);
+	    background-size: contain;
+	    border: none;
+	    cursor: pointer;
+	}
+	.my_btn .con{
+		padding: 28px 0px; 
+		text-align: center;
+	}
+	.my_btn button{
+		width: 330px;
+		height: 72px;
+	    font-size: 28px;
+	    color: #fff;
+	    line-height: 72px;
+	    text-align: center;
+	     cursor: pointer;
+	    background-size: contain;
+	    border: none;
+	    color: #666;
+		
+	}
+	.my_btn .btn1{
+		background-image: url(../images/btn1.png);
+		color: #fff;
+		margin-right: 30px;
+	}
+	.my_btn .btn2{
+		background-image: url(../images/btn2.png);
+	}
+	.my_main{
+		background:#f7f7f7 url(../images/my-bg.png) center top no-repeat;
+    	padding:0px 30px;
+    	box-sizing: border-box;	
+	}
+	.my_head{
+		font-size: 36px;
+		color:#FFFFFF;
+		padding: 30px 0px;
+		text-align: center;
+	}
+	.my_card1{
+		width: 690px;
+		background-color: #fff;
+		padding:50px 35px;
+    	box-sizing: border-box;	
+	}
+	.my_card2{
+		margin-top:20px ;
+		width: 690px;
+		background-color: #fff;
+		padding:0px 30px;
+    	box-sizing: border-box;	
+	}
+	.w_money{
+		font-size: 26px;
+		color: #333;
+		font-weight: 800;
+	}
+	.w_mount{
+		font-size: 72px;
+		color: #fc8462;
+		margin: 20px 0px 0px;
+	}
+	.w_detail{
+		font-size: 26px;
+		color: #666;
+	}
+	.my_card2 ul li{
+		    border-bottom: 1px solid #e4e4e4;
+		    height: 90px;
+		    line-height: 90px;
+		    font-size: 26px;
+		    box-sizing: border-box;	
+		    color: #333;
+	}
+	.my_card2 ul li:last-child{
+		 border-bottom: none;
+	}
+    .my_card2 ul li a{
+    	display: block;
+    	
+    }
+	.my_card2 ul li i{
+		width: 34px;
+		height: 34px;
+		display: inline-block;
+		background: url(../images/my_icon1.png) no-repeat scroll top left;
+		vertical-align: middle;
+		margin-right: 25px;
+	}
+
+	.my_card2 ul li .my_iocn2{
+		background: url(../images/my_icon2.png) no-repeat scroll top left;
+	}
+	.my_card2 ul li .my_iocn3{
+		background: url(../images/my_icon3.png) no-repeat scroll top left;
+	}
+	.my_card2 ul li .my_iocn4{
+		background: url(../images/my_icon4.png) no-repeat scroll top left;
+	}
+	
+	.left{
+		float: left;
+	}
+	.right{
+		float: right;
+	}
+	.clearfix:after, .ro:after{content:".";display:block;font-size: 0;height:0;clear:both;visibility:hidden}
+    .clearfix{zoom:1} 
+    
+    .next_icon{
+    	margin-top: 25px;
+    	width: 18px;
+		height: 34px;
+		background: url(../images/my_back.png) no-repeat scroll center right;
+    }
+    .incontent{
+    	padding:20px 30px 0px;
+    	box-sizing: border-box;	
+    	background:#f7f7f7;
+    }
+	.set_card2{
+	font-size: 26px;
+	color:#333333;
+	margin-top: 0px;
+	}    
+	.greenicon{
+	margin-top: 25px;
+	background: url(../images/agree_icon02.png) no-repeat scroll center right;    
+	width: 30px;
+	height: 30px;
+	background-size: 30px 30px;
+	}
+	.greyicon{
+	margin-top: 25px;
+	background: url(../images/agree_icon01.png) no-repeat scroll center right;    
+	width: 30px;
+	height: 30px;
+	background-size: 30px 30px;
+	}
+
+	.info_card2 ul li:last-child {
+	   height: auto;
+	   padding: 40px 0px;
+	   line-height:0px;
+	}
+	.info_card2 ul li .info_detail2{
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		width: 50%;
+		text-align: right;
+	}
+
+	.info_code{
+		margin-right: 115px;
+		margin-top: -20px;
+	}
+	.two_code img{
+		width: 200px;
+		height: 200px;
+	}
+	.two_btn img{
+		width: 140px;
+		height: 56px;
+		
+	}
+	
+.detail_card1 .pay{
+	width: 252px;
+	height: 252px;
+	margin: 0px auto;
+}
+.detail_card2{
+	padding-bottom: 30px;
+}
+.detail_card2 ul li{
+	border-bottom: none;
+	line-height: 35px;
+	padding-top:30px ;
+	height: auto;
+}
+.detail_card2 ul .head{
+	font-size: 32px;
+	font-weight: 800;
+	border-bottom: 1px solid #e4e4e4;
+	margin: 0px -30px;
+	
+}
+
+.detail_card2 .head div{
+	padding: 0px 30px 30px;
+}
+
+.mac_card2 li{
+	margin-top: 20px;
+}
+.mac_card2 li:first-child{
+	margin-top: 0px;
+	  
+}
+.mac_card2 li .floatbox:nth-child(2){
+	height:100%;	
+	margin-top: 0px;
+
+	background: url(../images/my_back.png) no-repeat scroll center right;
+}
+.mac_card2 li a{
+	display: inline-block;
+	padding: 45px 35px 45px 50px;
+	box-sizing: border-box;
+	width: 690px;
+	height: 260px;	
+	background: url(../images/mach1.png) no-repeat scroll center ;  
+}
+
+.mac_card2 li:nth-child(2) a{
+	display: inline-block;
+	width: 690px;
+	height: 260px;	
+	background: url(../images/mach2.png) no-repeat scroll center ;  
+}
+.mac_card2 li:nth-child(3) a{
+	display: inline-block;
+	width: 690px;
+	height: 260px;	
+	background: url(../images/mach3.png) no-repeat scroll center ;  
+}
+.mac_card2 li:nth-child(4) a{
+	display: inline-block;
+	width: 690px;
+	height: 260px;	
+	background: url(../images/mach4.png) no-repeat scroll center ;  
+}
+
+.mac_card2 .floatbox div:nth-child(1){
+	font-size: 32px;
+	color: #333;
+	font-weight: 800;
+}
+
+.mac_card2 .floatbox div:nth-child(2){
+	font-size: 26px;
+	color: #333;
+	margin: 15px 0px 40px;
+}
+.mac_card2 .floatbox button{
+	font-size: 26px;
+	color: #fc8462;
+    outline: 0;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+}

@@ -1,0 +1,174 @@
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+	vertical-align: baseline;
+}
+ul, li, dl, dt, dd, ol {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+input{outline:none}
+a:hover {
+	text-decoration: none;
+}
+body,html{
+	width:100%;
+	height:100%;
+}
+body {
+	font-family:"Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+	width: 100%;
+	overflow-x:hidden;
+	position: absolute;
+    *position:inherit;
+	overflow-x:hidden;
+	overflow:hidden;
+}
+.cursor {
+	cursor: pointer;
+}
+.nocursor{
+	cursor:none;
+}
+/* Remove annoying border on linked images. */
+a img {
+	border: none;
+}
+/*common*/
+.float-r {
+	float: right;
+}
+.float-l {
+	float: left;
+}
+.clearfix {
+	clear: both;
+	height: 0px;
+	line-height: 0;
+	overflow: hidden;
+	font-size: 0;
+}
+.animation{
+	-moz-transition:all ease 400ms;
+	-ms-transition:all ease 400ms;
+	-o-transition:all ease 400ms;
+	-webkit-transition:all ease 400ms;
+	transition:all ease 400ms;
+}
+
+.bgimg{
+	position:absolute;
+	top:0;
+	width:100%;
+	height:100%;
+	z-index:1;
+	display:block;
+}
+.logincontent{
+	width:500px;
+	margin:0 auto;
+	margin-top:100px;
+	background:#FFF;
+	position:relative;
+	z-index:2;
+
+}
+.logincontent .top{
+	background:#242b31 center no-repeat;
+	height:85px;
+}
+.logincontent .con{
+	padding:20px;
+}
+.logincontent .font{
+	font-size:14px;
+	font-weight:bold;
+}
+.logincontent .font,
+.logincontent .input,
+.logincontent .scodeimg{
+	display:inline-block;
+	height:32px;
+	padding:8px;
+	line-height:32px;
+	overflow:hidden;
+	font-size:12px;
+	color:#5c6c94;
+}
+.logincontent .scodeimg{
+	width:100px;
+	padding-left:0;
+	cursor:pointer;
+	position:relative;
+	top:-10px;
+	_top:0px;
+}
+.logincontent .scodeimg img{
+	width:120px;
+	height:38px;
+}
+.logincontent .input{
+	display:inline-block;
+	height:42px;
+	padding:8px;
+	line-height:42px;
+	overflow:hidden;
+	font-size:12px;
+	color:#5c6c94;
+}
+.logincontent .input *{vertical-align: middle;}
+.logincontent .input button{outline: 0;}
+.logincontent input{
+	width:330px;
+	padding:0 15px;
+	height:42px;
+	line-height:42px;
+	background:#FFF;
+	color:#8c97b2;
+	border:1px solid #c7cddb;
+	-moz-border-radius: 50px;    
+	-webkit-border-radius: 50px;    
+	border-radius: 50px;    
+	position:relative;    
+	z-index:2;
+}
+.logincontent input.codes{
+	width:200px;
+}
+.bottombtn{
+	padding:30px;
+	height:58px;
+	padding-top:10px;
+}
+.btnlefnt,.brnlogin{
+	cursor:pointer;
+	height:48px;
+	line-height:48px;
+	text-align:center;
+	font-size:18px;
+	color:#ffffff;
+	background:#88ae44;
+}
+.brnlogin{
+	background:#37bde0;
+}
+.copy{
+	margin:0 auto;
+	text-align:center;
+	width:500px;
+	position:relative;
+	height:40px;
+	line-height:40px;
+	font-size:12px;
+	color:#66737f;
+	z-index:2;
+	background:#09253d;
+	margin-top:16px;
+}

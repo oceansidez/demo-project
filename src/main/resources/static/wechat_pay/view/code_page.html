@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>微信支付</title>
+</head>
+<style type="text/css">
+	*{margin: 0; padding: 0; list-style: none; text-decoration: none; font-family: '微软雅黑'}
+	.paycon{width:900px; margin: 0 auto; margin-top: 50px;}
+	.title{ text-align:left; border-bottom: 1px solid #dedede; padding-bottom: 15px}
+	.paytop{background: #f4f4f4; padding:25px 15px; line-height: 30px; position: relative; font-size: 16px; color: #444}
+	.price{ position: absolute; right: 25px; top: 45px;}
+	.price span{ font-weight:bold; color: #FF7600}
+	.content{border:1px solid #dedede; padding:0px 30px; background:url(../img/share.png) 460px 35px no-repeat; height: 480px;background-size: 280px 359px}
+	.codecon{border:1px solid #dedede; padding: 5px; width: 180px; margin-top: 80px; margin-left:160px}
+	.codecon img{ width: 180px;}
+	.paytip{padding-top:60px; text-align: center; color: #666; font-size: 14px;}
+	.paytip img{ position:relative; bottom: -6px}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/jquery.qrcode.min.js"></script> 
+<script type="text/javascript">
+$().ready(function() {
+	try {
+		// 初始化参数
+		var qrCodeUrl = GetQueryString("qrCodeUrl");
+		var returnUrl = GetQueryString("returnUrl");
+		var fee = GetQueryString("fee");
+		var name = GetQueryString("name");
+		var tradeNo = GetQueryString("tradeNo");
+		
+		// 判断空值
+		if(qrCodeUrl == null || returnUrl == null || fee == null ||
+			name == null || tradeNo == null){
+			// 跳转错误页
+			window.location.href = "error_pc_page.html?errorMsg=微信支付参数无效。";
+		}
+		
+		// 渲染参数至页面
+		$("#payInfo").html(
+			'订单编号：'+ tradeNo +'<br>商品名称：'+ name +'<div class="price">支付金额：'+
+			'<span style="font-size:25px">'+ fee +'</span>&nbsp;元</div>'
+		);
+		
+		// 生成二维码
+		$("#qrCode").qrcode({ 
+		    width: 174, //宽度 
+		    height:174, //高度 
+		    text: qrCodeUrl
+		}); 
+		
+		// WebSocket初始化
+		var websocket = null;
+
+	    // 判断当前浏览器是否支持WebSocket
+	    if('WebSocket' in window){
+	        websocket = new WebSocket("ws://"+ window.location.host + getRootPathWeb() +"/ws/payWebSocket/" + tradeNo);
+	    }
+	    else if('MozWebSocket' in window) {
+	        websocket = MozWebSocket("ws://"+ window.location.host + getRootPathWeb() +"/ws/payWebSocket/" + tradeNo);
+	    }
+	    else{
+	    	window.location.href = "error_pc_page.html?errorMsg=对不起，您的浏览器暂不支持websocket";
+	    }
+
+	    // 连接发生错误的回调方法
+	    websocket.onerror = function(){
+	    	window.location.href = "error_pc_page.html?errorMsg=对不起，websocket连接异常";
+	    };
+
+	    // 连接成功建立的回调方法
+	    websocket.onopen = function(event){
+	    	console.log("websocket open");
+	    }
+
+	    // 接收到消息的回调方法
+	    websocket.onmessage = function(event){
+	    	// 接收服务端的支付推送通知
+	        var message = event.data;
+	        window.location.href= returnUrl +"?"+ message;
+	    }
+
+	    // 连接关闭的回调方法
+	    websocket.onclose = function(){
+	        console.log("websocket close");
+	    }
+
+	    // 监听窗口关闭事件，当窗口关闭时，主动去关闭websocket连接，防止连接还没断开就关闭窗口，server端会抛异常。
+	    window.onbeforeunload = function(){
+	        websocket.close();
+	    }
+	} catch (e) {
+		// 跳转错误页
+		window.location.href = "error_pc_page.html?errorMsg=微信支付处理异常。";
+	}
+	
+});
+
+function GetQueryString(name)
+{
+     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+     var r = window.location.search.substr(1).match(reg);
+     if(r!=null)return  decodeURIComponent(r[2]); return null;
+}
+
+function getRootPathWeb() {
+    var curWwwPath = window.document.location.href;
+    var pathName = window.document.location.pathname;
+    var pos = curWwwPath.indexOf(pathName);
+    var localhostPath = curWwwPath.substring(0, pos);
+    var projectName = pathName.substring(0, pathName.substr(1).indexOf('/') + 1);
+    return projectName;
+}
+</script>
+<body>
+<div class="paycon">
+	<div class="title"><img src="../img/WePayLogo.jpg" width="280" /></div>
+	<div class="paytop" id="payInfo">订单编号：${bean.tradeNo}<br>商品名称：${bean.name}<div class="price">支付金额：<span style="font-size:25px">${bean.fee}</span>&nbsp;元</div></div>
+	<div class="content">
+	    <div class="codecon"><div id="qrCode" style="text-align:center;margin-bottom:10px"></div><img src="../img/descript.png" /></div>
+	    <div class="paytip"><img src="../img/time.png" />&nbsp;请您在5分钟内完成支付，超时订单将被自动取消</div>
+	</div>
+</div>
+</body>
+</html>

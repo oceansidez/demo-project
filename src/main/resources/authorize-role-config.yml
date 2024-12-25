@@ -1,0 +1,21 @@
+# 权限集合
+# PS: 
+# (1).YML文件缩进不能使用Tab，必须使用空格！
+# (2).键值对的“:”冒号后必须接空格！
+# (3).数组必须以“-”开头，“-”符号后必须接回车或空格！
+
+roles:
+
+-
+  name: 系统管理
+  lists:
+    - ROLE_ADMIN: 用户管理
+    - ROLE_ROLE: 角色管理
+
+-
+  name: 其他功能
+  lists:
+    - ROLE_CODE: 代码生成
+    - ROLE_PAY: 第三方支付
+    - ROLE_STATIC_PAGE: 静态页模板
+    - ROLE_UPLOAD: 异步上传

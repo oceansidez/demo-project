@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+<meta name="format-detection" content="telephone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+<title>微信支付</title>
+</head>
+<style type="text/css">
+
+body {
+	/*text-align: center;*/
+	font-size: 100%;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-family:'Microsoft YaHei';
+	background:#fdfdfd;
+	width:100%;
+	min-height:100%;
+	overflow:scroll;
+}
+a.chekpoint, input, a img, div, * {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	max-height: 999999px;
+}
+	.wapcon{ padding-top:80px; text-align: center; width: 100%}
+	.wapcon img{width:35%; margin-bottom:40px}
+	h1,h2{font-size: 14px; line-height: 25px; display: block; width: 70%; margin: 0 auto; text-align:left; color: #999; font-weight: normal;}
+	h1{color:#00c800; font-size: 18px; padding-bottom: 25px; font-weight: bold; text-align: center}
+	h2{padding-bottom:30px}
+	.back{border-radius:5px; width: 70%; margin: 20px auto; padding: 6px 0; background: #00c800; border: 2px solid #00c800; font-size: 18px; color: #fff;}
+	.back.cur{ background: #fff; color: #00c800}
+</style>
+<script type="text/javascript">
+function GetQueryString(name)
+{
+     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+     var r = window.location.search.substr(1).match(reg);
+     if(r!=null)return  decodeURIComponent(r[2]); return null;
+}
+
+function init() {
+	var msgBox = document.getElementById("msgBox");
+	msgBox.innerHTML = GetQueryString("errorMsg");
+}
+
+window.onload = init;
+</script>
+<body>
+<div class="wapcon">
+	<img src="../img/WePayLogo.png" /><br>
+	<h1>微信支付发生错误:</h1>
+    <h2 id="msgBox" style="text-align:center"></h2>
+    <div class="back" onclick="window.history.back(); return false;">返    回</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>微信支付</title>
+</head>
+<body>
+<div style="width:860px; margin:0 auto; margin-top:80px; text-align:left; padding-bottom: 15px"><img src="../img/WePayLogo.png" width="150" /></div>
+<div style="width:860px; padding:20px;background:#fffded;border:1px solid #bdbdbd; color:#444; margin:0 auto; ">
+	<img src="../img/error_logo.png" width="40" style='position:absolute;'>&nbsp;
+	<span id="msgBox" style="margin-left:40px; line-height:40px; font-size:15px; "></span>
+</div>
+</body>
+<script type="text/javascript">
+function GetQueryString(name)
+{
+     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+     var r = window.location.search.substr(1).match(reg);
+     if(r!=null)return  decodeURIComponent(r[2]); return null;
+}
+
+function init() {
+	var msgBox = document.getElementById("msgBox");
+	msgBox.innerHTML = GetQueryString("errorMsg");
+}
+
+window.onload = init;
+</script>
+</html>

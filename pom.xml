@@ -1,0 +1,427 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>test-project</groupId>
+  <artifactId>test-project</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>test-project</name>
+  <description>demo-project</description>
+
+    <packaging>jar</packaging>
+<!-- 	<packaging>war</packaging> -->
+
+    <parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.2.2.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+<!--工程构建和输出是UTF-8 java版本1.8-->
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
+	</properties>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>compile</scope>
+		</dependency>
+
+			<dependency>
+				<groupId>com.github.whvcse</groupId>
+				<artifactId>easy-captcha</artifactId>
+				<version>1.6.2</version>
+			</dependency>
+
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+<!-- 			<exclusions> -->
+<!--                <exclusion> -->
+<!--                    <groupId>org.springframework.boot</groupId> -->
+<!--                    <artifactId>spring-boot-starter-tomcat</artifactId> -->
+<!--                </exclusion> -->
+<!--             </exclusions> -->
+		</dependency>
+
+	    <!-- 热部署 -->
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+         </dependency>
+
+        <!-- cloud-config配置中心 -->
+		<dependency>
+		    <groupId>org.springframework.cloud</groupId>
+		    <artifactId>spring-cloud-starter-config</artifactId>
+		    <version>2.2.2.RELEASE</version>
+		</dependency>
+
+		<!-- config配置动态刷新 -->
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-actuator</artifactId>
+	    </dependency>
+
+		<!-- Commons Lang3 -->
+		<dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-lang3</artifactId>
+		    </dependency>
+
+		<!-- Commons IO -->
+		<dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-io</artifactId>
+		    <version>1.3.2</version>
+		</dependency>
+
+		<!-- Log4j -->
+		<dependency>
+		    <groupId>log4j</groupId>
+		    <artifactId>log4j</artifactId>
+		    <version>1.2.17</version>
+		</dependency>
+
+		<!-- Jedis -->
+		<dependency>
+		    <groupId>redis.clients</groupId>
+		    <artifactId>jedis</artifactId>
+		</dependency>
+
+		<!-- Commons-Pool -->
+		<dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-pool2</artifactId>
+		</dependency>
+
+		<!-- Jackson -->
+		<dependency>
+		    <groupId>org.codehaus.jackson</groupId>
+		    <artifactId>jackson-mapper-asl</artifactId>
+		    <version>1.9.13</version>
+		</dependency>
+
+		<!-- Json Lib -->
+		<dependency>
+		    <groupId>net.sf.json-lib</groupId>
+		    <artifactId>json-lib</artifactId>
+		    <version>2.4</version>
+		    <!-- 指定jdk版本 -->
+		    <classifier>jdk15</classifier>
+		</dependency>
+
+		<!-- POI -->
+		<dependency>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>poi</artifactId>
+		    <version>3.9</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>poi-ooxml</artifactId>
+		    <version>3.9</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>poi-ooxml-schemas</artifactId>
+		    <version>3.9</version>
+		</dependency>
+
+		<!-- Redis -->
+        <dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-data-redis</artifactId>
+		    <!-- 内核替换：Jedis替换Lettuce -->
+		    <exclusions>
+				<exclusion>
+					<groupId>redis.clients</groupId>
+					<artifactId>jedis</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>io.lettuce</groupId>
+					<artifactId>lettuce-core</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<!-- MongoDB -->
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+        </dependency>
+
+		<!-- ElasticSearch -->
+<!--		<dependency>-->
+<!--	       <groupId>org.elasticsearch.client</groupId>-->
+<!--	       <artifactId>elasticsearch-rest-client</artifactId>-->
+<!--	    </dependency>-->
+
+		<!-- Servlet -->
+		<dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+		<!-- 分页插件 -->
+        <dependency>
+		    <groupId>com.github.pagehelper</groupId>
+		    <artifactId>pagehelper-spring-boot-starter</artifactId>
+		    <version>1.3.0</version>
+		</dependency>
+
+		<!-- 通用Mapper插件 -->
+        <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper-spring-boot-starter</artifactId>
+            <version>2.1.5</version>
+        </dependency>
+
+        <!-- Jsqlparser -->
+  		<dependency>
+			<groupId>com.github.jsqlparser</groupId>
+			<artifactId>jsqlparser</artifactId>
+			<version>3.1</version>
+		</dependency>
+
+		<!-- commons-net -->
+		<dependency>
+		    <groupId>commons-net</groupId>
+		    <artifactId>commons-net</artifactId>
+		    <version>3.6</version>
+		</dependency>
+
+		<!-- http -->
+		<dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+        </dependency>
+
+        <!-- Spring Security -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+
+		<!-- Spring Security taglib -->
+	    <dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+		</dependency>
+	    <dependency>
+	        <groupId>javax.servlet.jsp</groupId>
+	        <artifactId>jsp-api</artifactId>
+	        <version>2.0</version>
+	    </dependency>
+
+	    <!-- Spring Security web包 -->
+		<dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-web</artifactId>
+		</dependency>
+
+		<!--
+		包含支持UI模版（Velocity，FreeMarker，JasperReports），
+		邮件服务，
+		脚本服务（JRuby），
+		缓存Cache（EHCache），
+		任务计划Scheduling（Quartz）。
+		-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+        </dependency>
+
+		<!-- Spring AOP -->
+		<dependency>
+	        <groupId>org.springframework.boot</groupId>
+	        <artifactId>spring-boot-starter-aop</artifactId>
+	    </dependency>
+
+		<!-- MyBatis -->
+		<dependency>
+		    <groupId>org.mybatis.spring.boot</groupId>
+		    <artifactId>mybatis-spring-boot-starter</artifactId>
+		    <version>2.1.3</version>
+		</dependency>
+		<dependency>
+		    <groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
+		</dependency>
+
+        <!-- Hikari连接池 -->
+        <dependency>
+		    <groupId>com.zaxxer</groupId>
+		    <artifactId>HikariCP</artifactId>
+			<!-- 版本号可以不用指定，Spring Boot会选用合适的版本 -->
+		</dependency>
+
+		<!-- Freemarker -->
+		<dependency>
+	        <groupId>org.springframework.boot</groupId>
+	        <artifactId>spring-boot-starter-freemarker</artifactId>
+	    </dependency>
+
+		<!-- Quartz任务调度 -->
+	    <dependency>
+		    <groupId>org.quartz-scheduler</groupId>
+		    <artifactId>quartz</artifactId>
+		</dependency>
+
+		<!-- RabbitMq依赖 -->
+  		<dependency>
+	        <groupId>org.springframework.boot</groupId>
+	        <artifactId>spring-boot-starter-amqp</artifactId>
+	    </dependency>
+
+	    <!-- Websocket -->
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-websocket</artifactId>
+		</dependency>
+
+		<!-- WebSocket-Server -->
+	    <dependency>
+		    <groupId>javax.websocket</groupId>
+		    <artifactId>javax.websocket-client-api</artifactId>
+		    <version>1.1</version>
+		</dependency>
+
+		<!-- WebSocket-Client -->
+		<dependency>
+		    <groupId>javax.websocket</groupId>
+		    <artifactId>javax.websocket-api</artifactId>
+		    <scope>provided</scope>
+		</dependency>
+
+       <!-- Jsoup HTML parser -->
+       <dependency>
+		  <groupId>org.jsoup</groupId>
+		  <artifactId>jsoup</artifactId>
+		  <version>1.11.3</version>
+		</dependency>
+
+	    <!-- jdom -->
+	    <dependency>
+		    <groupId>org.jdom</groupId>
+		    <artifactId>jdom</artifactId>
+		    <version>1.1.3</version>
+	    </dependency>
+
+	    <!-- jaxen -->
+	    <dependency>
+		    <groupId>jaxen</groupId>
+		    <artifactId>jaxen</artifactId>
+		</dependency>
+
+	    <!-- apache-common-httpclient -->
+		<dependency>
+		    <groupId>commons-httpclient</groupId>
+		    <artifactId>commons-httpclient</artifactId>
+		    <version>3.1</version>
+		</dependency>
+
+	    <!-- goole-zxing二维码工具core -->
+	    <dependency>
+		    <groupId>com.google.zxing</groupId>
+		    <artifactId>core</artifactId>
+		    <version>3.1.0</version>
+		</dependency>
+
+	    <!-- goole-zxing二维码工具  -->
+	    <dependency>
+		    <groupId>com.google.zxing</groupId>
+		    <artifactId>javase</artifactId>
+		    <version>3.0.0</version>
+		</dependency>
+
+		<!-- Xstream -->
+		<dependency>
+		    <groupId>com.thoughtworks.xstream</groupId>
+		    <artifactId>xstream</artifactId>
+		    <version>1.4.11.1</version>
+		</dependency>
+
+		<!-- Yaml -->
+		<dependency>
+		    <groupId>org.yaml</groupId>
+		    <artifactId>snakeyaml</artifactId>
+		</dependency>
+
+		<!-- Tika -->
+		<dependency>
+			<groupId>org.apache.tika</groupId>
+			<artifactId>tika-core</artifactId>
+			<version>1.14</version>
+		</dependency>
+
+        <!-- Swagger2 -->
+        <dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.6.1</version>
+		</dependency>
+
+		 <!-- SwaggerUI -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.6.1</version>
+		</dependency>
+
+		<!-- Spring Boot Configuration -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
+		</dependency>
+
+		<!-- Reflections 反射框架 -->
+		<dependency>
+            <groupId>org.reflections</groupId>
+            <artifactId>reflections</artifactId>
+            <version>0.9.11</version>
+        </dependency>
+
+		<!-- Guava (Reflections反射框架的辅助类)  -->
+        <dependency>
+        	<groupId>com.google.guava</groupId>
+        	<artifactId>guava</artifactId>
+            <version>21.0</version>
+        </dependency>
+
+        <!-- alipay -->
+        <dependency>
+            <groupId>com.alipay.sdk</groupId>
+            <artifactId>alipay-sdk-java</artifactId>
+            <version>4.11.8.ALL</version>
+        </dependency>
+
+	</dependencies>
+
+	<build>
+		<finalName>test-web</finalName>
+	      <plugins>
+	          <plugin>
+	              <groupId>org.springframework.boot</groupId>
+	              <artifactId>spring-boot-maven-plugin</artifactId>
+	              <dependencies>
+					  <!-- spring热部署   -->
+	                  <dependency>
+	                      <groupId>org.springframework</groupId>
+	                      <artifactId>springloaded</artifactId>
+	                      <version>1.2.6.RELEASE</version>
+	                  </dependency>
+	              </dependencies>
+	          </plugin>
+
+	      </plugins>
+	</build>
+</project>
