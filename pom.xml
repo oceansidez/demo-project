@@ -404,6 +404,11 @@
             <version>4.11.8.ALL</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+        </dependency>
 	</dependencies>
 
 	<build>
